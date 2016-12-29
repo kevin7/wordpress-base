@@ -1,0 +1,141 @@
+.story {
+  position: relative;
+  z-index:10;
+  width: 85%;
+  margin: 95px auto 0 auto;
+  @include clearfix();
+  
+  img {
+    max-width:100%;  
+  }  
+  
+  .copy-group {
+    padding-top:30px;
+    .subtitle {
+      width: 70%; 
+    }  
+  }
+  
+  .story-left {
+    float:left;
+    width: 50%;
+    padding:0 5%;
+  }
+  
+  .story-right {
+    float:right;
+    width: 50%;    
+  }
+  
+  &.right {
+    margin-top:100px ;
+    .story-left {
+      float:right;
+      width: 50%;
+    }
+    
+    .story-right {
+      float:left;
+      width: 50%;    
+    }    
+  }
+  
+  @media (max-width: $screen-sm-max) {
+    
+    margin: 80px 0 0 0;
+    width: 100%;
+      
+    .copy-group {
+      padding-top:0px;
+      .subtitle {
+        width: 100%; 
+      }  
+    }
+    
+    .story-left {
+      width: 48%;  
+    }  
+    .story-right {
+      width: 50%;  
+      padding-right:5%;
+    }
+  }
+  
+  
+  @media (max-width: $screen-xs-max) {
+    
+    margin: 50px 0 0 0;
+    width: 100%;
+    .copy-group {
+      padding-top:0px;
+      .subtitle {
+        width: 100%; 
+      }  
+    }
+    
+    .story-right,    
+    .story-left {
+      width: 100%;
+      float:none;  
+      padding:0;
+    }  
+    &.right {
+      margin-top:50px;
+      .story-right,    
+      .story-left {
+        width: 100%;
+        float:none;  
+      }      
+    }
+  }  
+  
+}
+
+.divider {
+  margin-top:-50px;
+  height:310px;
+  position: relative;
+  z-index:1;
+  .divider-bg {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:200%;
+    margin-top:-10%;
+    background:transparent url('../images/bg-story.jpg') no-repeat 0 center;
+  }  
+  
+  
+  @media (max-width: $screen-sm-max) {
+    height:300px;
+    .divider-bg {
+      height:250%;
+      margin-top:-20%;  
+    }
+  }  
+  
+  @media (max-width: $screen-xs-max) {
+    display:none;
+  }    
+  
+}
+
+
+.quote {
+  margin-top:80px;
+  padding:10% 0;
+  text-align:center;  
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  color:#ffffff;
+  font-size:35px;
+  line-height:40px;
+  
+  @media (max-width: $screen-xs-max) {
+    font-size:20px;
+    line-height:22px;
+  }    
+  
+}

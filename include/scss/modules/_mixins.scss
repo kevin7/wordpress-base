@@ -1,0 +1,6 @@
+@mixin at2x($image, $width, $height) {
+  @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}

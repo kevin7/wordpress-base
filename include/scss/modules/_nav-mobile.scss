@@ -1,0 +1,138 @@
+@media (min-width:841px) {
+  #mobile-nav-overlay,
+  #mobile-nav-sidebar {
+    display:none;  
+  }  
+}
+
+@media (max-width:840px) {
+  
+  body {
+    &.mobile-no-scroll {
+      overflow:hidden;  
+    }  
+  }
+  
+  #mobile-nav-overlay {
+    background:rgba(0,0,0,0.8);
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;    
+    z-index:1200;
+    visibility:hidden;
+    opacity:0;
+    transition:all 1s ease;    
+    &.active {
+      visibility:visible;
+      opacity:1;
+    }
+  }
+  
+  #mobile-nav-sidebar {
+    width: 85%;
+    height:100%;    
+    max-width:344px;
+    background:#fff;
+    z-index:1300;
+    position: fixed;
+    top:0;
+    right:0;
+    text-align:center;
+    padding-top:50px;
+    right:-350px;
+    transition:right .3s ease;
+    &.active {
+      right:0;  
+      #mobile-close {
+        left:-40px;  
+        opacity:1;
+        transform:rotate(720deg);
+      }
+    }
+    
+    #mobile-close {
+      color:#fff;
+      position: absolute;
+      top:15px;
+      font-size:26px;  
+      opacity:0;
+      transform:rotate(0deg);
+      left:0;
+      transition:all .5s ease;
+      transition-delay:.2s;
+      &:hover {
+        color:$brand-primary;
+        text-decoration:none;  
+      }
+    }
+    
+    #logo-black {
+      display:inline-block;
+      width: 132px;
+      height:51px;  
+      background:url('../images/logo-nav-mobile.png') no-repeat 0 0;
+      @include at2x('../images/logo-nav-mobile@2x.png', 132px, 51px);
+    }
+    
+    ul {
+      margin:0;
+      padding:0;
+      list-style:none;
+      li {
+        margin:35px 0;  
+        a {
+          font-size:16px;
+          text-transform:uppercase;
+          color:#000;
+          font-weight:600;
+          &:active,
+          &:focus {
+            text-decoration:none;            
+          }
+          &:hover {
+            text-decoration:none;
+            color:$brand-primary;  
+          }
+        }
+        &.current-menu-item {
+          a {
+            color:$brand-primary;      
+          }  
+        }
+      }  
+    }
+    
+    .social {
+      position: absolute;
+      bottom:30px;
+      left:0;
+      width: 100%;
+      li {
+        width: auto;
+        display:inline-block;
+        margin:0 15px;
+        a {
+          font-size:25px;  
+        }  
+      }  
+    }
+    
+  }
+  
+  .page-template-tmpl-products,
+  .single-products {    
+    #mobile-nav-sidebar {
+      li#menu-item-18 {
+        a {
+          color:$brand-primary;
+        }
+      }  
+    }  
+  } 
+  
+}
+
+
+ 

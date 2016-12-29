@@ -1,0 +1,527 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+  background:$brown-light url('../images/bg-paper.jpg') repeat 0 0;
+}
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+  letter-spacing:.05em;
+  margin-bottom:20px;
+  margin-top:0;  
+  text-transform:uppercase;
+}
+
+a {
+  transition:all .3s ease;  
+}
+
+.container-fluid {
+  max-width:1230px;
+  margin:0 auto;  
+}
+
+#overflow-wrapper {
+  overflow:hidden;
+}
+
+#main-wrapper {
+  width: 100%;
+  max-width:1700px;
+  margin:0 auto;
+  background:$brown-light url('../images/bg-paper.jpg') repeat 0 0;
+  position: relative;
+}
+
+.heading-line {
+  position: relative;
+  text-align:center;
+  margin:0 10px;
+  &:after {
+    content:'';
+    position: absolute;
+    top:50%;
+    left:0;
+    border:1px solid $brown-dark;
+    width: 100%;
+  }
+  span {
+    position: relative;
+    z-index:1;
+    text-transform:uppercase;
+    font-family:$font-heading;
+    font-size:40px;
+    letter-spacing:.05em;
+    padding:20px 40px;
+    display:inline-block;
+    background:$brown-light;
+  }  
+    
+  @media (max-width: $screen-sm-max) {
+    span {
+      font-size:30px;  
+      line-height:34px;
+    }
+  }
+
+  
+  @media (max-width: $screen-xs-max) {   
+    span {
+      padding:20px 10px;
+      width: 60%;
+    }    
+  } 
+  
+  @media (max-width: $screen-xs) {         
+    span {
+      font-size:30px;  
+      line-height:28px;
+      width: 70%;
+    }    
+  }   
+  
+}
+
+.copy-group {
+  .title {
+    color:$brand-primary;
+    font-family:$font-heading;
+    font-size:17px;
+    letter-spacing:.3em;
+    text-transform:uppercase;  
+    margin-bottom:8px;
+  }  
+  
+  .subtitle {
+    font-size:40px;  
+    margin-bottom:25px;
+    line-height:40px;
+  }
+  
+  .content {
+    margin-bottom:35px;  
+  }
+  
+  @media (max-width:$screen-xs) {
+    .title {
+      margin-bottom:3px;  
+      font-size:15px;
+    }
+    .subtitle {
+      font-size:28px;
+      line-height:28px;  
+      margin-bottom:10px;
+    }  
+    .content {
+      margin-bottom:20px;  
+    }
+  }
+  
+}
+
+
+
+
+.product {
+  background:#fff;
+  position: relative;
+  @include clearfix();
+  height:auto;
+  transition:all .3s ease;
+  cursor:pointer;
+  &:hover {
+    .product-badge {
+      .name {
+        color:$brand-primary;  
+      }
+      .cta {
+        color:$brand-primary;  
+      }  
+    }  
+    .pib-image {
+      transform:scale(1.1);
+    }
+  }
+  
+  .overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#fff;
+    opacity:0;
+    z-index:10;
+    display:block;  
+    cursor:pointer;
+  }
+  
+  .product-intro {
+    padding:60px 0;  
+    width: 65%;
+    height:100%;
+    float:right;
+    display:table;
+  }  
+  
+  .product-badge {
+    display:table-cell;  
+    vertical-align:middle;
+  }
+  .product-image {
+    background:#666;
+    width: 35%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;  
+  }
+  .product-image-bg {
+    position: absolute;
+    top:0;
+    left:0;  
+    width: 100%;
+    height:100%;
+    overflow:hidden;
+  }
+  .pib-image {
+    position: absolute;
+    top:0;
+    left:0;      
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;
+    width: 100%;
+    height:100%;
+    z-index:0;    
+    transition:all .8s ease;  
+  }
+  .product-image-wrapper {
+    display:table;
+    width: 100%;
+    height: 100%;  
+  }
+  .piw-middle {
+    display:table-cell;
+    vertical-align:middle;
+    width: 100%;
+    height: 100%;  
+    text-align:right;
+    img {
+      display:inline-block;
+      width: 100%;  
+      position: relative;
+      right:-50%;
+    }
+  }  
+} 
+
+.product-badge {
+  width: 100%;
+  max-width:350px;
+  margin:0 auto;
+  text-align:center;
+  .name {
+    font-family:$font-heading;  
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    font-size:50px;
+    line-height:42px;
+    transition:all .3s ease;
+    span {
+      display:block;  
+    }
+  }
+  .excerpt {
+    border-top:3px solid #000;
+    border-bottom:3px solid #000;        
+    margin:15px auto 25px auto;
+    padding:10px 20px;
+    text-transform:uppercase;
+    color:$brand-primary;
+    font-weight:600;
+    display:inline-block;
+    font-size:13px;
+    letter-spacing:.05em;
+    p {
+      margin:0;  
+    }
+  }
+  .content {
+    font-size:14px;  
+    margin:0 auto;
+    width:100%;
+    max-width:360px;
+  }
+  .cta {
+    display:block; 
+    margin-top:35px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.05em;  
+    font-size:14px;
+    color:#000;
+  }   
+}
+
+
+@media (max-width: $screen-xs-max) {
+
+  .product {
+    margin:0 10px;
+    .product-intro {
+      padding:60px 0 30px 0;  
+      width: 100%;
+      height:100%;
+      float:none;
+      display:block;
+    }  
+    
+    .product-badge {
+      display:block;  
+    }
+    .product-image {
+      width: 100%;
+      height:230px;
+      padding-top:30%;
+      position: static;
+    }
+    .product-image-bg {
+      height:230px;
+    }    
+    .product-image-wrapper {
+    }
+    .piw-middle {
+      text-align:center;
+      img {
+        right:0%;
+        width:80%;
+        margin-top:-10%;
+        bottom:-45%;
+      }
+    }  
+  } 
+  
+  .product-badge {
+    width: 100%;
+    max-width:none;
+    padding:0 15px;
+    .name {
+      font-size:40px;
+      line-height:32px;
+    }
+    .excerpt {
+      margin:15px auto 15px auto;
+      font-size:12px;
+    }
+    .content {
+      width: 85%;
+      max-width:none;
+    }
+    .cta {
+      margin-top:15px;
+    }   
+  }
+
+}
+
+
+@media (max-width: $screen-xs) {
+
+  .product {
+    .product-image {
+      height:200px;
+      padding-top:5%;
+    }
+    .product-image-bg {
+      height:200px;
+    }   
+    .piw-middle {
+      img {
+        width:70%;
+        bottom:-50%;
+      }
+    }     
+  } 
+  
+}
+
+
+
+.product-wrapper.recipe {  
+  
+  .product {
+    
+    .recipe-image {
+      position: relative;
+      overflow:hidden;
+      img {
+        max-width:100%;  
+        transition:all .8s ease;
+      }  
+    }
+    
+    &:hover {
+      .recipe-image {
+        img {
+          transform:scale(1.1);
+        }  
+      }      
+    }
+    
+    .recipe-time {
+      background:rgba(0,0,0,0.8);
+      position: absolute;
+      bottom:0;
+      left:0;
+      width: 100%;
+      padding:10px;
+      letter-spacing:0.2em;
+      font-size:12.5px;
+      font-weight:600;
+      color:#fff;
+      text-transform:uppercase;
+      text-align:center;
+      .time {
+        color:$brand-primary;
+        i {
+          font-size:16px;  
+          position: relative;
+          top:1px;
+        }
+      }  
+    }
+    
+    .product-intro {
+      padding: 0;  
+      width: 100%;
+      height:100%;
+      height:245px;
+      float:none;
+    }  
+
+  } 
+  
+  .product-badge {;
+    .name {
+      width: 70%;
+      margin:0 auto;
+      letter-spacing:.1em;
+      font-size:30px;
+      line-height:32px;
+      font-weight:400;
+    }
+    .excerpt {
+      border-top:0;
+      border-bottom:0;
+      margin:0 auto 0 auto;
+      width: 60%;
+      padding:5px 20px;
+      font-family:$font-heading;
+      font-weight:400;
+      font-size:16px;
+      letter-spacing:.2em;
+      line-height: 18px;
+      p {
+        margin:0;  
+      }
+    }
+    .cta {
+      display:block; 
+      margin-top:25px;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:.05em;  
+      font-size:14px;
+    }   
+  }  
+  
+  @media (max-width: 1200px) {
+   
+    .product-badge {
+  
+      .name {
+        width: 80%;        
+      }
+      .excerpt {
+        width: 80%;        
+      }
+    }     
+    
+  }
+  
+  
+  @media (max-width: $screen-sm-max) {
+   
+    .product-badge {
+  
+      .name {
+        width: 90%;        
+      }
+      .excerpt {
+        width: 90%;        
+      }
+    }     
+    
+  }  
+  
+  @media (max-width:$screen-xs-max) {
+      
+    .product {      
+      
+      .recipe-time {
+        font-size:10px; 
+        .time {
+          i {
+            font-size:14px;  
+          }
+        }
+      }      
+            
+      
+      .product-intro {
+        display:table;
+        height:200px;
+      }      
+    }   
+      
+    .product-badge {
+      display:table-cell;
+      .name {
+        width: 100%;
+        font-size:28px;
+        line-height:30px;
+      }
+      .excerpt {
+        margin:0 auto 0 auto;
+        padding:5px 20px;
+        font-size:14px;
+      }
+      .cta {
+        margin-top:15px;
+      }   
+    }       
+    
+  }
+  
+  @media (max-width:$screen-xs) {
+      
+    .product {      
+      .product-intro {
+        padding: 25px 0;
+        min-height:10px;
+      }      
+    }         
+    
+  }  
+  
+}
+
+
+
+.page-content {
+  margin:30px 0;
+  background:#ffffff;
+  padding:30px;
+  position: relative;
+  z-index:10;    
+}

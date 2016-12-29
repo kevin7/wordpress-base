@@ -1,0 +1,628 @@
+.parallax-item {
+  position: absolute;
+  z-index:1;  
+  &.lime {
+    top:32%;
+    left:-7%;    
+  }
+  &.chilli {
+    top:42%;
+    left:-2%;    
+  }  
+  &.chilli-recipe {
+    top:30%;
+    left:-2%; 
+  }
+  &.onion {
+    top:50%;
+    right:-7%;  
+  }
+  &.tomato {
+    top:50%;
+    right:-7%;  
+  }  
+  
+  
+  @media (max-width: 1270px) {
+    display:none !important;  
+  }
+}
+
+#product-filter {
+  margin:50px 0;
+  text-align:center;
+  font-size:5px;
+  z-index:5;  
+  @include clearfix();
+  a {
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    display:inline-block;
+    padding:30px 6%;
+    background:$brown-dark;
+    color:$brown-darkest;
+    transition:all .3s ease;
+    font-size:14px;
+    cursor:pointer;
+    &.active {
+      background:$brand-primary;
+      color:#fff;  
+    }
+    &:hover {
+      text-decoration:none;  
+    }
+    &:active,
+    &:focus {
+      text-decoration:none;  
+    }
+  }
+  
+  @media (max-width: $screen-xs-max) {
+    margin:30px 0;
+    white-space:nowrap;
+    a {
+      width: 25%;
+      font-size:12px;
+      padding:15px 5px;  
+    }  
+  }
+  
+  @media (max-width: $screen-xs) {
+    a {
+      float:left;
+      width: 50%;
+      border-right:1px solid $brown-light;
+      border-bottom:1px solid $brown-light;
+    }  
+  }  
+  
+}
+
+.products {
+  min-height:800px;
+  position: relative;
+  z-index:5;
+  margin:0 -15px;
+  .product-wrapper {
+    padding:0 15px;  
+    width: 50%;  
+    float:left;    
+    @include clearfix();
+    display:none;
+    
+    &.recipe {
+      width: 33.33%;  
+      
+      
+      @media (max-width: $screen-xs-max) {
+        width: 50%;  
+      }
+      
+      @media (max-width: $screen-xs) {
+        width: 100%;  
+      }      
+      
+    }
+    
+  }  
+  
+  .product {
+    margin-bottom:30px;
+    .product-intro {
+      padding:30px 0;
+    }
+    .cta {
+      margin-top:0;
+      color:#000;  
+    }
+    
+    @media (max-width:$screen-xs-max) {
+      margin:0 0 20px 0;  
+      .product-intro {
+        padding:60px 0 30px 0;    
+      }
+    }  
+  }
+  
+  @media (max-width:$screen-xs) {
+    .product-wrapper {
+      width: 100%;  
+    }
+  }    
+}
+
+
+#product-info {
+  @include clearfix();
+  margin-top:-70px;
+  position: relative;
+  z-index:10;
+  .product-image {
+    width: 55%;
+    float:left;  
+    text-align:right;
+    position: relative;    
+    img {
+      max-width:100%;
+      display:inline-block;  
+    }
+  }  
+  
+  .product-intro {
+    width: 40%;
+    float:right;  
+  }
+
+  .product-badge {
+    margin:0;
+    .name {
+      font-size:100px;
+      line-height:80px;
+      margin-bottom:0;
+      span {
+        color:#fff;
+      }  
+    }
+    .excerpt {
+      font-size:15px;  
+    }
+    .content {
+      margin-bottom:25px; 
+      p { 
+        font-size:15px;
+      }
+    }  
+  }
+ 
+  @media (max-width: $screen-md-max) {
+     
+  }
+  
+  @media (max-width: $screen-xs-max) {
+    
+    .product-image {
+      width: 100%;  
+      text-align:center;
+    }
+    .product-intro {
+      margin-top:30px;
+      width: 100%;  
+    }    
+    
+    .product-badge {
+      margin:0 auto;
+      .name {
+        font-size:60px;
+        line-height:50px;
+        span {
+          color:#000;
+        }  
+      }
+      .excerpt {
+        font-size:13px;  
+      }
+    }
+  }
+  
+  @media (max-width: $screen-xs) {
+    .product-badge {
+      .name {
+        font-size:50px;
+        line-height:42px; 
+      }
+    }
+  }    
+    
+}
+
+
+#product-tab {
+  margin-top:80px;  
+  position: relative;
+  z-index:10;  
+  @media (max-width: $screen-xs) {
+    margin-top:50px;
+  }   
+  
+}
+
+#recipe-tab {
+  margin-top:40px;  
+  position: relative;
+  z-index:10;  
+  @media (max-width: $screen-xs) {
+    margin-top:40px;
+  }   
+  
+}
+
+.nav.nav-tabs {
+  >li  {
+    float:left;
+    >a {
+      border-radius:0;
+      border:0 !important;
+      background-color:$brown-dark;
+      color:lighten($brown-darkest, 35%);
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      font-weight:400;
+      padding:25px 50px;
+      margin:0;
+      display:inline-block;
+      width: auto;
+      white-space:nowrap;
+      font-size:16px;      
+    }
+    &.active {
+      >a {
+        color:$brown-darkest;
+        background-color:#fff;  
+        font-weight:600;      
+      }  
+    }  
+  }
+  
+  @media (max-width: $screen-sm-max) {
+    >li {
+      width: 50%;
+      height:100%;
+      display:table;
+      min-height:90px;      
+      >a {
+        display:table-cell;
+        width: 100%;
+        height:100%;
+        vertical-align:middle;
+        white-space:pre-wrap;  
+        text-align:center;
+        padding:15px 10px;
+      }  
+    }  
+  }
+  
+  @media (max-width: $screen-xs-max) {
+    >li {
+      >a {
+        font-size:14px;
+      }  
+    }  
+  }  
+  
+  @media (max-width: $screen-xs) {
+    >li {
+      min-height:72px; 
+      >a {
+        font-size:12px;
+        line-height:14px;
+      }  
+    }  
+  }    
+  
+}
+
+.tab-content {
+  background:#fff;
+  padding:35px 50px 25px 50px;    
+  @include clearfix();
+  
+  @media (max-width: $screen-xs-max) {
+    padding:20px;
+  }
+  
+  .tab-title {
+    text-transform:uppercase;
+    font-size:16px;
+    font-weight:600;    
+    padding-bottom:15px;
+    margin-bottom:25px;
+    border-bottom:3px solid $brown-darkest; 
+    color:$brand-primary;
+    letter-spacing:.05em;    
+  }   
+  
+}
+
+.col {
+  width: 50%;
+  float:left;
+  font-size:15px;
+  line-height:19px;
+
+  &:first-child {
+    padding-right:15px;  
+  }
+  
+  &:last-child {
+    padding-left:15px;  
+  } 
+  
+  &.col-full {
+    width: 100%;  
+    ol.steps {
+      list-style:none;  
+      margin:0;
+      padding:0;
+    }
+    li {
+      .no {
+        background:#000;
+        width: 20px;
+        height: 20px;
+        border-radius:30px;
+        color:#fff;
+        line-height: 20px;
+        display:inline-block;
+        text-align:center;
+        font-size:12px;
+        margin-bottom:15px;
+      }
+      padding-top:10px;  
+    }
+  }
+  
+  .recipe-item {
+    margin-bottom:30px;  
+    p {
+      margin-bottom:15px;  
+    }
+  }
+  
+  .heat-item {
+    margin-bottom:30px;
+    h4 {
+      color:$brand-primary;
+      text-transform:uppercase;
+      font-size:16px;  
+      letter-spacing:.05em;
+      position: relative;
+      padding-left:40px;
+      display:block;
+      font-weight:700;
+      font-family: $font-base;
+      &:before {
+        content:'';
+        position: absolute;  
+        top:-4px;
+        left:0;
+        width: 26px;
+        background:url('../images/icon-heats.png') no-repeat 0 0;
+        @include at2x('../images/icon-heats@2x.png', 24px, 71px);
+      }
+      &.prep {
+        &:before {
+        height: 23px;
+        background-position:0 0;        
+        }
+      }
+      &.heat {
+        &:before {
+        height: 24px;          
+        background-position:0 -23px;        
+        }
+      }
+      &.serve {
+        &:before {
+        height: 24px;
+        background-position:0 -47px;  
+        }
+      }
+    }  
+    p {
+      padding:0 40px;      
+      font-size:14px;  
+    }
+  }
+   
+  @media (max-width: $screen-xs-max) {
+    width: 100%; 
+    margin-bottom:30px;
+    
+    &.col-left {
+     margin-bottom:0; 
+    }
+    
+    &:first-child {
+      padding-right:0;  
+    }
+    
+    &:last-child {
+      padding-left:0;  
+    }     
+  }     
+  
+  .serving {
+    margin-bottom:15px;  
+  }
+  
+  table {
+    width: 100%;
+    thead {
+      border-top:1px solid #ebebea;  
+      border-bottom:1px solid #ebebea;        
+    }  
+    
+    th {
+      font-weight:400;
+      padding:20px 0;  
+      &:first-child {
+        width: 40%;  
+      }
+    }
+    
+    td {
+      padding:6px 0;  
+    }
+  }
+  
+  
+  .content {
+    img {
+      max-width:90%;
+      height:auto!important;
+      display:inline-block;
+      margin-bottom:25px;  
+    }  
+    p {
+      margin-bottom:20px;  
+    }
+  }
+  
+  .guarantee {
+    font-size:11px;
+    text-transform:uppercase;
+    a {
+      color:$brown-darkest;
+      text-decoration:underline;  
+    }  
+  }
+  
+}
+
+
+
+#product-interested {
+  @include clearfix();
+  margin-top:50px;
+  position: relative;
+  z-index:10;  
+  .product-wrapper {
+    width: 50%;  
+    float:left;
+    
+    .product,
+    .product-intro {
+      min-height:250px;  
+    }
+    
+    &:first-child {
+      padding-right:15px;  
+    }
+    
+    &:last-child {
+      padding-left:15px;      
+    }
+    
+    .product-intro {
+      width: 55%;  
+    }
+    
+    .product-badge {
+      .name {
+        width: 70%;  
+        margin:0 auto;
+      }
+      .excerpt {
+        margin-bottom:0;  
+      }  
+    }   
+    
+  }  
+    
+
+  @media (max-width: $screen-md-max) {
+    
+    .product-wrapper {
+      
+      &:first-child {
+        padding-right:10px;  
+      }
+      
+      &:last-child {
+        padding-left:10px;      
+      }
+      
+      .product-intro {
+        width: 55%;  
+        padding:0 10px;
+      }
+      
+      .product-badge {
+        padding:30px 0;
+        .name {
+          width: 90%;  
+          margin:0 auto;
+          font-size:34px;
+          line-height:36px;
+        } 
+      }   
+      
+    }
+  }
+
+  @media (max-width: $screen-sm-max) {
+    
+    .product {
+      margin:0px;  
+    }
+    
+    .product-wrapper {
+      margin-bottom:20px;
+      
+      &:first-child {
+        padding-right:10px;  
+      }
+      
+      &:last-child {
+        padding-left:10px;      
+      }      
+      
+      .product-intro {
+        width: 55%;  
+        padding:0 10px;
+      }
+      
+      .product-badge {
+        padding:50px 0;
+        .name {
+          font-size:30px;
+          line-height:32px;
+        }
+      }   
+      
+    }
+  }
+
+  @media (max-width: $screen-xs-max) {
+
+    
+    .product-wrapper {
+      
+      &:first-child {
+        padding-right:10px;  
+      }
+      
+      &:last-child {
+        padding-left:10px;      
+      }      
+      
+      .product-intro {
+        width: 100%;  
+        min-height:100px;
+      }
+      
+      .product-badge {
+        padding:70px 0 50px 0;
+      }   
+      
+    }
+
+  }  
+  
+  @media (max-width: $screen-xs) {
+
+    
+    .product-wrapper {
+      width: 100%;
+      &:first-child {
+        padding-right:0px;  
+      }
+      
+      &:last-child {
+        padding-left:0px;      
+      }          
+    }
+
+  }      
+  
+}

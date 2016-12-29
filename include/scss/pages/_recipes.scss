@@ -1,0 +1,202 @@
+.recipe-info {
+  position: absolute;
+  padding-bottom:30px;
+  padding-top:80px;
+  bottom:0;
+  left:0;
+  width: 100%;
+  text-align:center;
+  background: -moz-linear-gradient(top,  rgba(125,185,232,0) 0%, rgba(120,177,222,0) 4%, rgba(0,0,0,0.96) 96%, rgba(0,0,0,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(125,185,232,0) 0%,rgba(120,177,222,0) 4%,rgba(0,0,0,0.96) 96%,rgba(0,0,0,1) 100%);
+  background: linear-gradient(to bottom,  rgba(125,185,232,0) 0%,rgba(120,177,222,0) 4%,rgba(0,0,0,0.96) 96%,rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#000000',GradientType=0 );
+
+  
+  .recipe-title {
+    width: 100%;
+    max-width: 380px;  
+    margin:0 auto;
+    padding-bottom:10px;
+  }
+  h1 {
+    font-size:65px;  
+    line-height:65px;
+    color:#fff;
+    letter-spacing:0.1em;
+    margin-bottom:0px;
+  }  
+  .excerpt {
+    color:$brand-primary;
+    font-family: $font-heading;
+    font-size:30px;  
+    line-height: 32px;
+    letter-spacing:0.1em;    
+  }
+  .recipe-details {
+    @include clearfix();
+    color:#fff;
+    width:100%;
+    max-width:850px;
+    margin:0 auto;
+    .ri-prep,
+    .ri-serves,
+    .ri-cook {
+      float:left;
+      width: 33.33%;  
+      padding:0;
+      letter-spacing:0.2em;
+      font-size:12.5px;
+      font-weight:600;
+      color:#fff;
+      text-transform:uppercase;
+      text-align:center;
+      padding:0 10px;
+      span {
+        color:$brand-primary;
+        i {
+          font-size:16px;  
+          position: relative;
+          top:1px;
+        }
+      }        
+    }
+  }
+  
+  @media (max-width: $screen-xs-max) {
+    padding-bottom:0;
+    
+    h1 {
+      font-size:50px;
+      line-height:50px;  
+      padding:0 15px;
+    }  
+    .excerpt {
+      font-size:24px;
+      line-height: 26px;  
+    }
+    .recipe-details {
+      .ri-prep,
+      .ri-serves,
+      .ri-cook { 
+        padding-bottom:20px;        
+        font-size:10px; 
+        color:#b7b7b7;
+        span {
+          margin-top:5px;
+          display:block;
+          color:#fff;
+          i {
+            font-size:14px;  
+          }
+        }
+      }
+      
+      .ri-serves {
+        position: relative;
+        &:after,
+        &:before {
+          width: 1px;  
+          height:100%;
+          position: absolute;
+          bottom:0;          
+          content:'';
+          display:block;
+background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(77,77,77,1) 46%, rgba(73,73,73,1) 47%, rgba(73,73,73,1) 100%);
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(77,77,77,1) 46%,rgba(73,73,73,1) 47%,rgba(73,73,73,1) 100%);
+background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(77,77,77,1) 46%,rgba(73,73,73,1) 47%,rgba(73,73,73,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#494949',GradientType=0 );
+
+
+      
+        }  
+        &:after {
+          left:0;  
+        }
+        &:before {
+          right:0;  
+        }        
+      }
+      
+    }
+  }
+  
+}
+
+
+.grid {
+  margin:0 -15px;
+  .grid-item {
+    width: 50%;
+    padding:15px;  
+  }  
+  @media (max-width: $screen-xs-max) {
+    margin:0;
+    .grid-item {
+      width: 100%;
+      padding: 15px 0;  
+    }  
+  }
+}
+
+
+
+
+
+#recipe-interested {
+  @include clearfix();
+  margin:50px -10px 0 -10px;
+  position: relative;
+  z-index:10;  
+  .product-wrapper {
+    width: 33.3%;  
+    float:left;
+    padding:0 10px;
+    
+    
+    .product-intro {
+      width: 80%;
+      margin:0 auto;  
+    } 
+    
+  }  
+
+  @media (max-width: $screen-sm-max) {
+    
+    .product {
+      margin:0px;  
+    }
+    
+    .product-wrapper {
+      margin-bottom:20px;
+    }
+  }
+
+  @media (max-width: $screen-xs-max) {
+
+    
+    .product-wrapper {
+      width: 50%;
+      &:last-child {
+        display:none;  
+      }
+    }
+
+  }  
+  
+  @media (max-width: $screen-xs) {
+
+    
+    .product-wrapper {
+      width: 100%;
+      &:first-child {
+        padding-right:0px;  
+      }
+      
+      &:last-child {
+        padding-left:0px;      
+      }          
+    }
+
+  }      
+  
+}

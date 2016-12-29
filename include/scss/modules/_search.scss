@@ -1,0 +1,113 @@
+#search-overlay {
+  background:rgba(0,0,0,0.85);
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%; 
+  z-index:1200; 
+  opacity:0;
+  visibility:hidden;
+  transition:all .3s ease;
+  
+  &.search-active {
+    opacity:1;
+    visibility:visible;  
+  }
+  
+  .btn-search-close {
+    color:#fff;
+    font-size:30px;
+    position: absolute;
+    top:20px;
+    right:20px;
+    position: absolute;
+  }
+  
+  .search-wrapper {
+    position: relative;
+    margin-top:20%;
+    input#search {
+      width: 100%;
+      font-size:40px;
+      background:transparent;
+      box-shadow:none;
+      border:0;
+      border-bottom:1px solid rgba(255,255,255,0.4);  
+      padding-bottom:25px;
+      color:#ffffff;
+      padding-right:60px;
+      
+      &:focus,
+      &:active {
+        outline:none;
+      }
+      
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+          color: #fff;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+          color: #fff;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+          color: #fff;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+          color: #fff;
+        }            
+    }
+    
+    .btn-search {
+      position: absolute;
+      top:10px;
+      right:0px;  
+      border:0;
+      background:transparent;
+      font-size: 25px;
+      color:#fff;
+      &:hover {
+        color:$brand-primary;  
+      }
+    }
+      
+  }
+  
+  @media (max-width: $screen-xs-max) {
+    .search-wrapper {
+      margin-top:120px;
+      input#search {
+        font-size:30px;
+        padding-bottom:15px;  
+      }  
+      .btn-search {
+        font-size:20px;
+        top:8px;  
+      }
+    }  
+    .btn-search-close {
+      font-size:24px;
+      top:20px;
+      right:20px;
+    }       
+  }
+  
+  @media (max-width: $screen-xs) {
+    .search-wrapper {
+      input#search {
+        font-size:20px;
+        padding-bottom:10px;  
+      }  
+      .btn-search {
+        font-size:14px;
+        top:2px;  
+      }    
+    }  
+    .btn-search-close {
+      font-size:20px;
+      top:15px;
+      right:15px;
+    }         
+  }  
+  
+}
+

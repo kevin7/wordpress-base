@@ -1,0 +1,32 @@
+.stores {
+  margin:30px 0 0 0;  
+  img {
+    margin:10px 0 20px 0;    
+    max-width: 85%; 
+  }
+  .col-content {
+    padding-right: 300px;
+    .btn {
+      position: absolute;
+      bottom:15px;
+      right:15px;
+      padding-left:15px;
+      padding-right:10px;  
+    }  
+  }
+  @media (max-width: $screen-sm-max) {
+    .col-content {
+      padding-right:0;
+      .btn {
+        position: static;
+        margin-top:8px;  
+      }  
+    }  
+  }
+  @media (max-width: $screen-xs-max) {
+    img {
+      display:inline-block;
+      margin-bottom:15px; 
+    }  
+  }
+}

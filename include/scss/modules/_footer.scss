@@ -1,0 +1,87 @@
+footer { 
+  text-align:center;
+  margin-top:50px;  
+  background:url('../images/bg-footer.jpg') no-repeat center bottom;
+  background-size:cover;
+  position: relative;
+  z-index:0;
+  .logo {
+    width: 136px;
+    height:53px;
+    display:inline-block;
+    margin:30px 0 40px 0;
+    background-image:url('../images/logo-footer.png');
+    
+    @include at2x('../images/logo-footer@2x.png', 136px, 53px);
+    
+  }
+  
+  ul {
+    margin:0;
+    padding:0;
+    list-style:none;  
+    width: 100%;
+    text-align:center;
+    li {
+      display:inline-block;  
+      margin:0 5%;
+      a {
+        text-transform:uppercase;
+        color:$brown-darkest;  
+        font-size:11px;
+        font-weight:700;
+        letter-spacing:.05em;
+        &:hover {
+          color:lighten($brown-darkest, 20%);  
+          text-decoration:none;  
+        }
+      }
+    }
+    @media (max-width: $screen-sm-max) {
+      li {
+        margin:0 3%;  
+      }  
+    }
+  }  
+  
+  nav {
+    margin-bottom:10px;
+  }
+  
+  .social {
+    margin-bottom:30px;  
+    li {
+      margin:0 5px;
+      a {
+        font-size:18px;  
+      }  
+    }
+  }
+  
+  .copyright {
+    font-size:12px;
+    margin-bottom:30px;  
+  }
+  
+  .powered {
+    padding-left:40px;
+    .logo-rh {
+      margin-left:5px;
+      position: relative;
+      top:9px;    
+      display:inline-block;
+      width: 89px;
+      height:26px;
+      background:url('../images/logo-rh.png') no-repeat 0 0;  
+      @include at2x('../images/logo-rh@2x.png', 89px, 26px);
+    }  
+  }
+  
+  @media (max-width:767px) {
+    .powered {
+      display:block;
+      padding-left:0;  
+    }  
+  }
+    
+}

@@ -1,0 +1,66 @@
+form {
+  
+}
+
+.form-control {
+  height:66px;
+  border:1px solid #eae3d8;  
+  appearance:none;
+  -webkit-appearance:none;
+  -ms-appearance:none;  
+  border-radius:0;
+  box-shadow:none;
+  outline:none;
+  padding-left:20px;
+  padding-right:20px;  
+}
+
+textarea.form-control {
+  max-height:146px;  
+  padding-top:20px;
+}
+
+
+
+.select-wrapper {
+  position: relative;
+  &:after {
+    display:none\9;
+    content:'\e807';
+    font-family:'fontello';
+    position: absolute;
+    top:18px;
+    right:23px;
+    font-size:20px;
+  }  
+}
+
+.form-action {
+  position: relative;
+  .ajax-loader  {
+    position: absolute;
+    right:180px;
+    top:20px;
+  }
+}
+
+.response {
+  .wpcf7-response-output {
+    border:0;
+    padding:15px;
+    margin:0 0 20px 0;  
+    color:#fff;
+    &.wpcf7-validation-errors {
+      background:$brand-danger;  
+    }
+    &.wpcf7-mail-sent-ok {
+      background:$brand-success;  
+    }    
+  }  
+}
+
+span.wpcf7-not-valid-tip {
+  color:$brand-danger;
+  display:block;
+  margin-top:3px;
+}
