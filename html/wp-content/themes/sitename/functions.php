@@ -1,13 +1,4 @@
 <?php
-/*
-Author: Eddie Machado
-URL: http://themble.com/bones/
-
-This is where you can drop your custom functions or
-just edit things like thumbnail sizes, header images,
-sidebars, comments, etc.
-*/
-
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
 
@@ -25,7 +16,7 @@ function bones_ahoy() {
   add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
   // let's get language support going, if you need it
-  load_theme_textdomain( 'bonestheme', get_template_directory() . '/library/translation' );
+  //load_theme_textdomain( 'bonestheme', get_template_directory() . '/library/translation' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
   require_once( 'library/custom-post-type.php' );
@@ -73,8 +64,8 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 150, true );
-add_image_size( 'bones-thumb-300', 300, 100, true );
+//add_image_size( 'bones-thumb-600', 600, 150, true );
+//add_image_size( 'bones-thumb-300', 300, 100, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -96,7 +87,7 @@ You can change the names and dimensions to whatever
 you like. Enjoy!
 */
 
-add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
+//add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
 
 function bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
@@ -239,9 +230,11 @@ can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
 function bones_fonts() {
-  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+  //wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
 }
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
+
+add_filter('show_admin_bar', '__return_false');
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
